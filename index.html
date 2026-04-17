@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Techworld Studio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --primary:#2563eb;
+  --secondary:#7c3aed;
+  --bg:#ffffff;
+  --text:#0f172a;
+  --card:#f8fafc;
+}
+
+body.dark{
+  --bg:#020617;
+  --text:#e2e8f0;
+  --card:#0f172a;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  transition:0.4s ease;
+}
+
+header{
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 40px;
+  backdrop-filter:blur(12px);
+  background:rgba(255,255,255,0.8);
+  z-index:1000;
+}
+
+body.dark header{
+  background:rgba(2,6,23,0.8);
+}
+
+header h1{
+  font-weight:900;
+  color:var(--primary);
+}
+
+nav{
+  display:flex;
+  gap:18px;
+  align-items:center;
+}
+
+nav a{
+  text-decoration:none;
+  color:var(--text);
+  font-weight:500;
+  position:relative;
+}
+
+nav a::after{
+  content:"";
+  position:absolute;
+  bottom:-4px;
+  left:0;
+  width:0%;
+  height:2px;
+  background:var(--primary);
+  transition:0.3s;
+}
+
+nav a:hover::after{
+  width:100%;
+}
+
+.btn{
+  background:linear-gradient(45deg,var(--primary),var(--secondary));
+  color:#fff;
+  padding:10px 18px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:scale(1.05);
+}
+
+#toggle{
+  cursor:pointer;
+}
+
+section{
+  padding:120px 50px;
+}
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  background:linear-gradient(120deg,#2563eb,#7c3aed);
+  color:#fff;
+}
+
+.hero h2{
+  font-size:55px;
+  font-weight:900;
+}
+
+.hero p{
+  margin:20px 0;
+  font-size:20px;
+}
+
+.fade{
+  opacity:0;
+  transform:translateY(30px);
+  transition:1s;
+}
+
+.fade.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.alert{
+  background:linear-gradient(45deg,#facc15,#f97316);
+  padding:20px;
+  border-radius:12px;
+  text-align:center;
+  font-weight:700;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:var(--card);
+  border-radius:16px;
+  padding:20px;
+  transition:0.4s;
+}
+
+.card:hover{
+  transform:translateY(-10px);
+}
+
+.card img{
+  width:100%;
+  border-radius:12px;
+  margin-bottom:10px;
+}
+
+@media(max-width:768px){
+  section{padding:100px 20px}
+  .hero h2{font-size:35px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Techworld Studio</h1>
+<nav>
+<a href="#">Inicio</a>
+<a href="#historia">Nuestra historia</a>
+<a href="#catalogo">Catálogo</a>
+<a href="#opiniones">Opiniones</a>
+<a href="https://wa.me/50581294177" class="btn">Cotizar</a>
+<span id="toggle">🌙</span>
+</nav>
+</header>
+
+<section class="hero">
+<h2 class="fade">Diseños que hacen crecer tu negocio</h2>
+<p class="fade">Branding profesional adaptado a cada país</p>
+<a href="https://wa.me/50581294177" class="btn fade">Cotizar ahora</a>
+</section>
+
+<section>
+<div class="alert fade">
+⚠️ Los precios pueden variar según el país debido a impuestos, comisiones y tipo de cambio.
+</div>
+</section>
+
+<section>
+<h2>Servicios</h2>
+<div class="grid">
+
+<div class="card fade">
+<img src="logo1.jpg">
+<h3>Diseño de Logotipos</h3>
+<p>Identidad visual profesional para tu negocio</p>
+<a href="https://wa.me/50581294177" class="btn">Cotizar</a>
+</div>
+
+<div class="card fade">
+<img src="logo2.jpg">
+<h3>Branding Completo</h3>
+<p>Construcción total de marca</p>
+<a href="https://wa.me/50581294177" class="btn">Cotizar</a>
+</div>
+
+<div class="card fade">
+<img src="logo3.jpg">
+<h3>Diseño para Redes</h3>
+<p>Contenido visual que convierte</p>
+<a href="https://wa.me/50581294177" class="btn">Cotizar</a>
+</div>
+
+</div>
+</section>
+
+<script>
+const faders = document.querySelectorAll('.fade');
+
+const appear = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+faders.forEach(el => appear.observe(el));
+
+const toggle = document.getElementById('toggle');
+toggle.onclick = () => document.body.classList.toggle('dark');
+</script>
+
+  <!-- ===================== PAÍSES ===================== -->
+<section>
+  <h2 class="fade">Países donde operamos</h2>
+
+  <div class="grid">
+
+    <div class="card fade"><h3>🇳🇮 Nicaragua</h3><p>País principal</p></div>
+    <div class="card fade"><h3>🇨🇷 Costa Rica</h3></div>
+    <div class="card fade"><h3>🇵🇦 Panamá</h3></div>
+    <div class="card fade"><h3>🇨🇴 Colombia</h3></div>
+    <div class="card fade"><h3>🇨🇱 Chile</h3></div>
+    <div class="card fade"><h3>🇲🇽 México</h3></div>
+
+  </div>
+</section>
+
+
+<!-- ===================== MÉTODO DE TRABAJO ===================== -->
+<section>
+  <h2 class="fade">Nuestro método de trabajo</h2>
+
+  <div class="grid">
+
+    <div class="card fade">
+      <h3>1. Cuéntanos tu idea</h3>
+      <p>Nombre, rubro y visión de tu negocio.</p>
+    </div>
+
+    <div class="card fade">
+      <h3>2. Diseñamos sin pago</h3>
+      <p>Trabajamos primero, sin compromiso inicial.</p>
+    </div>
+
+    <div class="card fade">
+      <h3>3. Propuestas</h3>
+      <p>Recibes diseños con marca de agua.</p>
+    </div>
+
+    <div class="card fade">
+      <h3>4. Ajustes</h3>
+      <p>Mejoramos hasta que quede perfecto.</p>
+    </div>
+
+    <div class="card fade">
+      <h3>5. Pago</h3>
+      <p>Pagas solo cuando estés satisfecho.</p>
+    </div>
+
+    <div class="card fade">
+      <h3>6. Entrega final</h3>
+      <p>JPG, PNG sin fondo y archivos vectoriales.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ===================== MÉTODOS DE PAGO ===================== -->
+<section>
+  <h2 class="fade">Métodos de pago</h2>
+
+  <div class="grid">
+
+    <div class="card fade">
+      <h3>🇳🇮 Nicaragua</h3>
+      <p>LAFISE</p>
+      <p>Billetera Móvil Banpro</p>
+      <p>Efectivo</p>
+      <p>Retiro sin tarjeta</p>
+    </div>
+
+    <div class="card fade">
+      <h3>🌎 Internacional</h3>
+      <p>PayPal</p>
+      <p>Binance</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ===================== OPINIONES ===================== -->
+<section id="opiniones">
+  <h2 class="fade">Opiniones de clientes</h2>
+
+  <div class="grid">
+
+    <div class="card fade">
+      <p>“Excelente servicio, muy rápido y profesional.”</p>
+      <h4>- Cliente, México</h4>
+    </div>
+
+    <div class="card fade">
+      <p>“El logo quedó perfecto, super recomendado.”</p>
+      <h4>- Cliente, Colombia</h4>
+    </div>
+
+    <div class="card fade">
+      <p>“Atención de calidad y diseños increíbles.”</p>
+      <h4>- Cliente, Chile</h4>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===================== PORTAFOLIO ===================== -->
+<section id="catalogo">
+  <h2 class="fade">Nuestro trabajo</h2>
+
+  <div class="grid">
+
+    <div class="card fade">
+      <img src="trabajo1.jpg">
+    </div>
+
+    <div class="card fade">
+      <img src="trabajo2.jpg">
+    </div>
+
+    <div class="card fade">
+      <img src="trabajo3.jpg">
+    </div>
+
+    <div class="card fade">
+      <img src="trabajo4.jpg">
+    </div>
+
+    <div class="card fade">
+      <img src="trabajo5.jpg">
+    </div>
+
+    <div class="card fade">
+      <img src="trabajo6.jpg">
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ===================== NUESTRA HISTORIA ===================== -->
+<section id="historia">
+  <h2 class="fade">Nuestra historia</h2>
+
+  <div class="card fade">
+    <p>
+      Techworld Studio nace con una visión clara: ofrecer diseño profesional accesible,
+      moderno y adaptado a cada tipo de negocio sin importar el país.
+    </p>
+
+    <br>
+
+    <p>
+      Nos especializamos en crear identidades visuales que no solo se vean bien,
+      sino que realmente generen impacto, confianza y crecimiento en nuestros clientes.
+    </p>
+
+    <br>
+
+    <p>
+      Trabajamos bajo un modelo único: diseñamos primero, y cobras después,
+      porque creemos que la confianza se gana con resultados.
+    </p>
+  </div>
+</section>
+
+
+<!-- ===================== CTA FINAL ===================== -->
+<section>
+  <div class="card fade" style="text-align:center; padding:50px;">
+    
+    <h2>¿Listo para llevar tu negocio al siguiente nivel?</h2>
+    
+    <p style="margin:15px 0;">
+      Tu marca merece un diseño profesional que genere resultados reales.
+    </p>
+
+    <a href="https://wa.me/50581294177" class="btn" style="font-size:18px;">
+      Cotizar ahora
+    </a>
+
+  </div>
+</section>
+
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  
+  <h3>Techworld Studio</h3>
+
+  <p style="margin:10px 0;">
+    Diseño profesional para negocios modernos
+  </p>
+
+  <p>
+    WhatsApp: +505 8129 4177
+  </p>
+
+  <br>
+
+  <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
+    <a href="#" style="color:inherit;">Inicio</a>
+    <a href="#historia" style="color:inherit;">Nuestra historia</a>
+    <a href="#catalogo" style="color:inherit;">Catálogo</a>
+    <a href="#opiniones" style="color:inherit;">Opiniones</a>
+  </div>
+
+  <br>
+
+  <p style="font-size:14px;">
+    © 2026 Techworld Studio - Todos los derechos reservados
+  </p>
+
+</footer>
+  
+</body>
+</html>
