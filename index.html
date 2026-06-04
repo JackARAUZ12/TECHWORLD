@@ -2,27 +2,22 @@
 <html lang="es">
 <head>
 
-  <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-252MRT9H7L"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-252MRT9H7L');
 </script>
-  
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TechWorld Studio | Diseño de Logotipos, Branding y Desarrollo Web en Nicaragua</title>
-
 <meta name="description" content="TechWorld Studio ofrece diseño de logotipos, branding, identidad corporativa, tarjetas de presentación, vectorización, animación de logotipos y desarrollo web profesional para negocios en Nicaragua.">
-
 <meta name="keywords" content="diseño de logotipos Nicaragua, diseñador gráfico Nicaragua, branding Nicaragua, identidad corporativa, diseño de marcas, tarjetas de presentación, vectorización de logotipos, animación de logos, páginas web Nicaragua">
-
 <meta name="author" content="TechWorld Studio">
 <meta name="robots" content="index, follow">
-
 <link rel="canonical" href="https://oficialtechworldstudio.com">
 
 <meta property="og:type" content="website">
@@ -37,234 +32,1953 @@
 <meta name="twitter:image" content="https://oficialtechworldstudio.com/logo1.png">
 
 <link rel="icon" type="image/png" href="logo1.png">
+<link rel="apple-touch-icon" href="logo1.png">
 
 <script type="application/ld+json">
 {
- "@context":"https://schema.org",
- "@type":"ProfessionalService",
- "name":"TechWorld Studio",
- "url":"https://oficialtechworldstudio.com",
- "telephone":"+50581294177",
- "address":{
-   "@type":"PostalAddress",
-   "addressCountry":"NI"
- },
- "areaServed":"Nicaragua",
- "serviceType":[
-   "Diseño de Logotipos",
-   "Branding",
-   "Diseño Gráfico",
-   "Desarrollo Web"
- ]
+  "@context":"https://schema.org",
+  "@type":"ProfessionalService",
+  "name":"TechWorld Studio",
+  "url":"https://oficialtechworldstudio.com",
+  "telephone":"+50581294177",
+  "address":{"@type":"PostalAddress","addressCountry":"NI"},
+  "areaServed":"Nicaragua",
+  "serviceType":["Diseño de Logotipos","Branding","Diseño Gráfico","Desarrollo Web"]
 }
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-:root{
---primary:#2563eb;
---secondary:#9333ea;
---bg:#ffffff;
---text:#0f172a;
---card:#f1f5f9;
---accent:#22c55e;
+/* =============================================
+   ROOT & VARIABLES
+============================================= */
+:root {
+  --blue: #2563eb;
+  --violet: #7c3aed;
+  --pink: #db2777;
+  --cyan: #06b6d4;
+  --green: #10b981;
+  --gold: #f59e0b;
+
+  --bg: #050818;
+  --surface: #0d1630;
+  --surface2: #111827;
+  --border: rgba(255,255,255,0.07);
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --white: #ffffff;
+
+  --grad: linear-gradient(135deg, var(--blue), var(--violet));
+  --grad2: linear-gradient(135deg, var(--violet), var(--pink));
+  --grad3: linear-gradient(135deg, var(--cyan), var(--blue));
+
+  --radius: 20px;
+  --radius-sm: 12px;
+  --shadow: 0 25px 60px rgba(0,0,0,0.5);
+  --shadow-glow: 0 0 40px rgba(37,99,235,0.3);
+
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
 }
 
-body.dark{
---bg:#020617;
---text:#e2e8f0;
---card:#0f172a;
+/* =============================================
+   RESET & BASE
+============================================= */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
 }
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
 
-body{background:var(--bg);color:var(--text);transition:0.3s;scroll-behavior:smooth}
-
-header{
-position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:15px 40px;background:rgba(255,255,255,0.8);backdrop-filter:blur(12px);z-index:1000
+/* =============================================
+   NOISE TEXTURE OVERLAY
+============================================= */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.4;
 }
 
-body.dark header{background:rgba(2,6,23,0.8)}
+/* =============================================
+   BACKGROUND BLOBS
+============================================= */
+.bg-blobs {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.15;
+  animation: blobFloat 12s ease-in-out infinite;
+}
+.blob-1 { width: 600px; height: 600px; background: var(--blue); top: -200px; left: -200px; animation-delay: 0s; }
+.blob-2 { width: 500px; height: 500px; background: var(--violet); bottom: 20%; right: -150px; animation-delay: 4s; }
+.blob-3 { width: 400px; height: 400px; background: var(--pink); bottom: -100px; left: 30%; animation-delay: 8s; }
 
-nav{display:flex;gap:20px;align-items:center;flex-wrap:wrap}
-nav a{text-decoration:none;color:var(--text);font-weight:500}
-
-.btn{
-background:linear-gradient(45deg,var(--primary),var(--secondary));
-color:#fff;padding:12px 20px;border-radius:12px;text-decoration:none;font-weight:600;transition:0.3s;display:inline-block
+@keyframes blobFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -20px) scale(1.05); }
+  66% { transform: translate(-20px, 20px) scale(0.97); }
 }
 
-.btn:hover{transform:scale(1.07)}
-
-#toggle{cursor:pointer}
-
-section{padding:140px 60px}
-
-.hero{
-min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff;
-background:linear-gradient(135deg,#2563eb,#9333ea);
+/* =============================================
+   HEADER / NAV
+============================================= */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 0 40px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(5, 8, 24, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.3s;
 }
 
-.hero h1{font-size:60px;font-weight:900;max-width:800px}
-.hero p{margin:25px 0;font-size:22px;max-width:600px}
-
-.sub-hero{
-margin-top:30px;font-size:14px;opacity:0.8
+.logo-brand {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.3rem;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  white-space: nowrap;
 }
 
-.grid{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px
+nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.card{
-background:var(--card);padding:25px;border-radius:20px;transition:0.3s;position:relative;overflow:hidden
+nav a.nav-link {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+nav a.nav-link:hover { color: var(--white); background: rgba(255,255,255,0.06); }
+
+.btn-cta {
+  background: var(--grad);
+  color: #fff !important;
+  padding: 10px 22px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+  box-shadow: 0 4px 20px rgba(37,99,235,0.4);
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+}
+.btn-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(37,99,235,0.5); }
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  transition: background 0.2s;
+}
+.hamburger:hover { background: rgba(255,255,255,0.1); }
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile menu */
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  background: rgba(5, 8, 24, 0.97);
+  backdrop-filter: blur(20px);
+  padding: 20px 30px 30px;
+  z-index: 999;
+  border-bottom: 1px solid var(--border);
+  flex-direction: column;
+  gap: 4px;
+  transform: translateY(-10px);
+  opacity: 0;
+  transition: all 0.3s;
+}
+.mobile-menu.open {
+  display: flex;
+  transform: translateY(0);
+  opacity: 1;
+}
+.mobile-menu a {
+  padding: 14px 16px;
+  border-radius: 10px;
+  color: var(--muted);
+  font-weight: 500;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+}
+.mobile-menu a:hover { color: var(--white); background: rgba(255,255,255,0.05); border-color: var(--border); }
+.mobile-menu .btn-cta { margin-top: 10px; justify-content: center; }
+
+/* =============================================
+   SECTIONS & LAYOUT
+============================================= */
+section {
+  position: relative;
+  z-index: 1;
 }
 
-.card:hover{transform:translateY(-10px)}
-
-.card img{width:100%;border-radius:12px;margin-bottom:15px}
-
-.section-title{
-font-size:32px;margin-bottom:30px;font-weight:800;text-align:center
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
-.alert{
-background:linear-gradient(45deg,#facc15,#f97316);
-padding:20px;border-radius:12px;text-align:center;font-weight:600
+/* =============================================
+   HERO
+============================================= */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 72px;
+  overflow: hidden;
+  position: relative;
 }
 
-.steps{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 40px;
+  text-align: center;
 }
 
-.step{
-background:var(--card);padding:20px;border-radius:15px
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(37,99,235,0.15);
+  border: 1px solid rgba(37,99,235,0.3);
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  color: #93c5fd;
+  margin-bottom: 32px;
+  font-weight: 500;
+}
+.hero-badge::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: var(--green);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--green);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.6;transform:scale(1.3)} }
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  max-width: 900px;
+  margin: 0 auto 24px;
 }
 
-.badge{
-position:absolute;top:10px;right:10px;background:var(--accent);color:white;padding:5px 10px;border-radius:8px;font-size:12px
+.hero h1 .gradient-text {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.footer{
-background:var(--card);padding:60px;text-align:center
+.hero-sub {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto 40px;
+  font-weight: 400;
 }
 
-.fade{opacity:0;transform:translateY(40px);transition:1s}
-.fade.show{opacity:1;transform:translateY(0)}
+.hero-ctas {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
 
-@media(max-width:768px){
-section{padding:100px 20px}
-.hero h1{font-size:36px}
+.btn-primary {
+  background: var(--grad);
+  color: #fff;
+  padding: 16px 36px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s;
+  box-shadow: 0 8px 30px rgba(37,99,235,0.4);
+  font-family: var(--font-display);
+  cursor: pointer;
+  border: none;
+}
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(37,99,235,0.5); }
+
+.btn-secondary {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--text);
+  padding: 16px 36px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.btn-secondary:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.2); transform: translateY(-2px); }
+
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+.stat-item { text-align: center; }
+.stat-num {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+}
+.stat-label { color: var(--muted); font-size: 0.85rem; }
+
+/* Hero scroll indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--muted), transparent);
+}
+@keyframes scrollBounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+
+/* =============================================
+   SECTION TITLES
+============================================= */
+.section-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #60a5fa;
+  margin-bottom: 12px;
+  display: block;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.section-desc {
+  color: var(--muted);
+  font-size: 1.05rem;
+  max-width: 560px;
+  line-height: 1.7;
+}
+.section-head { margin-bottom: 60px; }
+
+/* =============================================
+   NOTICE BANNER
+============================================= */
+.notice-banner {
+  padding: 16px 40px;
+  background: linear-gradient(135deg, rgba(245,158,11,0.1), rgba(249,115,22,0.1));
+  border-top: 1px solid rgba(245,158,11,0.2);
+  border-bottom: 1px solid rgba(245,158,11,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 0.9rem;
+  color: #fbbf24;
+  text-align: center;
+}
+.notice-icon { font-size: 1.1rem; }
+
+/* =============================================
+   SERVICIOS
+============================================= */
+#servicios { padding: 100px 0; }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.service-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  group: true;
+}
+.service-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(37,99,235,0.4);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4), 0 0 0 1px rgba(37,99,235,0.2);
+}
+
+.service-card-img {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--surface2), var(--surface));
+}
+.service-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.service-card:hover .service-card-img img { transform: scale(1.08); }
+
+.service-card-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--surface) 0%, transparent 60%);
+}
+
+.card-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: var(--grad);
+  color: white;
+  padding: 5px 14px;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  font-family: var(--font-display);
+  z-index: 2;
+}
+
+.service-card-body { padding: 24px; }
+
+.service-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  margin-bottom: 16px;
+  background: rgba(37,99,235,0.1);
+  border: 1px solid rgba(37,99,235,0.2);
+}
+
+.service-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.service-card p {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.service-price {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.price-from {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.price-num {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--white);
+}
+.price-suffix { font-size: 0.8rem; color: var(--muted); }
+
+.btn-card {
+  width: 100%;
+  background: rgba(37,99,235,0.1);
+  border: 1px solid rgba(37,99,235,0.3);
+  color: #93c5fd;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+.btn-card:hover {
+  background: var(--grad);
+  border-color: transparent;
+  color: white;
+  transform: none;
+  box-shadow: 0 4px 20px rgba(37,99,235,0.3);
+}
+
+/* =============================================
+   PROCESO
+============================================= */
+#metodo { padding: 100px 0; background: var(--surface); }
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.process-step {
+  padding: 28px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  position: relative;
+  transition: all 0.3s;
+}
+.process-step:hover {
+  border-color: rgba(37,99,235,0.3);
+  transform: translateY(-4px);
+}
+
+.step-number {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 12px;
+  opacity: 0.5;
+}
+
+.process-step h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.process-step p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+
+/* =============================================
+   PRECIOS
+============================================= */
+#precios { padding: 100px 0; }
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+
+.pricing-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 36px;
+  position: relative;
+  transition: all 0.4s;
+}
+.pricing-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+}
+.pricing-card.featured {
+  border-color: rgba(37,99,235,0.5);
+  background: linear-gradient(135deg, rgba(37,99,235,0.08), rgba(124,58,237,0.08));
+  box-shadow: 0 0 0 1px rgba(37,99,235,0.2), var(--shadow-glow);
+}
+.pricing-card.featured::before {
+  content: 'Más Popular';
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--grad);
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 5px 20px;
+  border-radius: 50px;
+  font-family: var(--font-display);
+  white-space: nowrap;
+}
+
+.pricing-name {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.pricing-desc { color: var(--muted); font-size: 0.9rem; margin-bottom: 28px; }
+
+.pricing-amount {
+  margin-bottom: 28px;
+}
+.pricing-currency { font-size: 1.2rem; color: var(--muted); vertical-align: top; line-height: 2; }
+.pricing-value {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1;
+}
+.pricing-note { color: var(--muted); font-size: 0.8rem; margin-top: 6px; }
+
+.pricing-features { list-style: none; margin-bottom: 32px; }
+.pricing-features li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.pricing-features li:last-child { border-bottom: none; }
+.pricing-features li::before {
+  content: '✓';
+  width: 22px;
+  height: 22px;
+  background: rgba(16,185,129,0.15);
+  color: var(--green);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.btn-pricing-primary {
+  width: 100%;
+  background: var(--grad);
+  color: white;
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-align: center;
+  transition: all 0.3s;
+  display: block;
+  font-family: var(--font-display);
+  box-shadow: 0 4px 20px rgba(37,99,235,0.3);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.btn-pricing-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(37,99,235,0.5); }
+
+.btn-pricing-secondary {
+  width: 100%;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 14px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s;
+  display: block;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.btn-pricing-secondary:hover { border-color: rgba(37,99,235,0.4); background: rgba(37,99,235,0.06); }
+
+.pricing-disclaimer {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* =============================================
+   PORTAFOLIO
+============================================= */
+#catalogo { padding: 100px 0; background: var(--surface); }
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.portfolio-item {
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 4/3;
+  background: var(--surface2);
+  cursor: pointer;
+}
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.portfolio-item:hover img { transform: scale(1.08); }
+
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(5,8,24,0.9) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+}
+.portfolio-item:hover .portfolio-overlay { opacity: 1; }
+.portfolio-overlay-label {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: white;
+}
+.portfolio-overlay-sub {
+  font-size: 0.78rem;
+  color: #93c5fd;
+  margin-top: 2px;
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 9998;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(12px);
+}
+.lightbox.active { display: flex; }
+.lightbox img { max-width: 90vw; max-height: 85vh; object-fit: contain; border-radius: 12px; }
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.2s;
+  color: white;
+}
+.lightbox-close:hover { background: rgba(255,255,255,0.2); }
+
+/* =============================================
+   OPINIONES
+============================================= */
+#opiniones { padding: 100px 0; }
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.testimonial-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  position: relative;
+  transition: all 0.3s;
+}
+.testimonial-card:hover {
+  border-color: rgba(37,99,235,0.3);
+  transform: translateY(-4px);
+}
+.testimonial-card::before {
+  content: '"';
+  font-family: Georgia, serif;
+  font-size: 5rem;
+  line-height: 1;
+  color: rgba(37,99,235,0.2);
+  position: absolute;
+  top: 10px;
+  left: 24px;
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 16px;
+  margin-top: 8px;
+}
+.star { color: var(--gold); font-size: 1rem; }
+
+.testimonial-text {
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+  font-style: italic;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.testimonial-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--grad);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1rem;
+  color: white;
+  flex-shrink: 0;
+}
+.author-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  font-family: var(--font-display);
+}
+.author-company { color: var(--muted); font-size: 0.8rem; }
+
+/* =============================================
+   PAGOS
+============================================= */
+#pagos { padding: 100px 0; background: var(--surface); }
+
+.payments-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.payment-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  transition: all 0.3s;
+}
+.payment-card:hover { border-color: rgba(37,99,235,0.3); transform: translateY(-4px); }
+
+.payment-card-icon {
+  font-size: 2rem;
+  margin-bottom: 14px;
+}
+.payment-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.payment-methods { list-style: none; }
+.payment-methods li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.payment-methods li:last-child { border-bottom: none; }
+.payment-methods li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--blue);
+  flex-shrink: 0;
+}
+.payment-methods li.unavailable { opacity: 0.45; text-decoration: line-through; }
+.payment-tag {
+  font-size: 0.7rem;
+  background: rgba(239,68,68,0.15);
+  color: #f87171;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-left: auto;
+}
+
+/* =============================================
+   FAQ
+============================================= */
+#faq { padding: 100px 0; }
+
+.faq-list { max-width: 760px; margin: 0 auto; }
+
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+}
+.faq-item:first-child { border-top: 1px solid var(--border); }
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  color: var(--text);
+  text-align: left;
+  padding: 24px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  font-family: var(--font-body);
+  transition: color 0.2s;
+}
+.faq-question:hover { color: #93c5fd; }
+.faq-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.3s;
+  font-size: 0.8rem;
+}
+.faq-item.open .faq-icon {
+  background: rgba(37,99,235,0.15);
+  border-color: rgba(37,99,235,0.3);
+  color: #93c5fd;
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s;
+}
+.faq-item.open .faq-answer { max-height: 300px; }
+
+.faq-answer-inner {
+  padding-bottom: 20px;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* =============================================
+   CTA FINAL
+============================================= */
+#cta { padding: 100px 0; }
+
+.cta-box {
+  background: linear-gradient(135deg, rgba(37,99,235,0.12), rgba(124,58,237,0.12));
+  border: 1px solid rgba(37,99,235,0.25);
+  border-radius: 28px;
+  padding: 72px 60px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(37,99,235,0.5), transparent);
+}
+.cta-box h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.cta-box p { color: var(--muted); font-size: 1.05rem; margin-bottom: 40px; }
+.cta-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+/* =============================================
+   FOOTER
+============================================= */
+footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 60px 40px 30px;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+.footer-brand .logo-brand { font-size: 1.4rem; margin-bottom: 12px; display: block; }
+.footer-brand p { color: var(--muted); font-size: 0.9rem; line-height: 1.7; max-width: 300px; }
+
+.footer-col h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul li a {
+  color: var(--muted);
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+.footer-col ul li a:hover { color: var(--white); }
+
+.footer-bottom {
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.footer-bottom p { color: var(--muted); font-size: 0.85rem; }
+
+/* =============================================
+   WHATSAPP FLOATING
+============================================= */
+.whatsapp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9990;
+  width: 60px;
+  height: 60px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 30px rgba(37,211,102,0.45);
+  transition: all 0.3s;
+  animation: waBounce 3s ease-in-out infinite;
+  cursor: pointer;
+}
+.whatsapp-float:hover {
+  transform: scale(1.12);
+  box-shadow: 0 12px 40px rgba(37,211,102,0.6);
+  animation: none;
+}
+.whatsapp-float svg { width: 30px; height: 30px; fill: white; }
+
+@keyframes waBounce {
+  0%,100%{transform:scale(1)}
+  10%{transform:scale(1.1)}
+  20%{transform:scale(1)}
+}
+
+.wa-tooltip {
+  position: absolute;
+  right: 72px;
+  background: rgba(5,8,24,0.9);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(6px);
+  transition: all 0.2s;
+}
+.whatsapp-float:hover .wa-tooltip { opacity: 1; transform: translateX(0); }
+
+/* =============================================
+   ANIMATIONS
+============================================= */
+.fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+
+/* =============================================
+   RESPONSIVE — TABLET
+============================================= */
+@media (max-width: 1024px) {
+  .footer-top { grid-template-columns: 1fr 1fr; }
+  .footer-brand { grid-column: 1 / -1; }
+  .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* =============================================
+   RESPONSIVE — MOBILE
+============================================= */
+@media (max-width: 768px) {
+  header { padding: 0 20px; }
+  nav .nav-link, nav .btn-cta { display: none; }
+  .hamburger { display: flex; }
+
+  .hero-inner { padding: 60px 20px; }
+  .hero h1 { font-size: 2.2rem; }
+  .hero-sub { font-size: 1rem; }
+  .hero-stats { gap: 28px; }
+  .stat-num { font-size: 1.6rem; }
+
+  .container { padding: 0 20px; }
+  #servicios, #metodo, #precios, #catalogo, #opiniones, #pagos, #faq, #cta { padding: 70px 0; }
+
+  .services-grid, .process-grid, .pricing-grid, .testimonials-grid, .payments-grid { grid-template-columns: 1fr; }
+
+  .portfolio-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+  .cta-box { padding: 44px 24px; }
+  .cta-box h2 { font-size: 1.8rem; }
+
+  .footer-top { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+
+  .notice-banner { font-size: 0.82rem; padding: 14px 20px; }
+  .section-head { margin-bottom: 40px; }
+
+  .whatsapp-float { bottom: 20px; right: 20px; width: 54px; height: 54px; }
+  .whatsapp-float svg { width: 26px; height: 26px; }
+}
+
+@media (max-width: 480px) {
+  .portfolio-grid { grid-template-columns: 1fr; }
+  .hero-ctas { flex-direction: column; align-items: center; }
+  .btn-primary, .btn-secondary { width: 100%; justify-content: center; }
+  .cta-btns { flex-direction: column; align-items: center; }
+  .cta-btns a { width: 100%; justify-content: center; }
 }
 </style>
 </head>
-
 <body>
 
+<!-- Background blobs -->
+<div class="bg-blobs" aria-hidden="true">
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+</div>
+
+<!-- HEADER -->
 <header>
-<h2>Techworld Studio</h2>
-<nav>
-<a href="#">Inicio</a>
-<a href="#servicios">Servicios</a>
-<a href="#metodo">Proceso</a>
-<a href="#catalogo">Portafolio</a>
-<a href="#opiniones">Opiniones</a>
-<a href="https://wa.me/50581294177" class="btn">Cotizar</a>
-<span id="toggle">🌙</span>
-</nav>
+  <span class="logo-brand">TechWorld Studio</span>
+  <nav>
+    <a href="#servicios" class="nav-link">Servicios</a>
+    <a href="#precios" class="nav-link">Precios</a>
+    <a href="#metodo" class="nav-link">Proceso</a>
+    <a href="#catalogo" class="nav-link">Portafolio</a>
+    <a href="#opiniones" class="nav-link">Opiniones</a>
+    <a href="#faq" class="nav-link">FAQ</a>
+    <a href="https://wa.me/50581294177" class="btn-cta" target="_blank" rel="noopener">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Cotizar ahora
+    </a>
+  </nav>
+  <!-- Hamburger -->
+  <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
 </header>
 
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#servicios" class="nav-link">Servicios</a>
+  <a href="#precios" class="nav-link">Precios</a>
+  <a href="#metodo" class="nav-link">Proceso</a>
+  <a href="#catalogo" class="nav-link">Portafolio</a>
+  <a href="#opiniones" class="nav-link">Opiniones</a>
+  <a href="#faq" class="nav-link">FAQ</a>
+  <a href="https://wa.me/50581294177" class="btn-cta" target="_blank" rel="noopener">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Cotizar ahora
+  </a>
+</div>
+
+<!-- HERO -->
 <section class="hero">
-<h1 class="fade">Diseño de Logotipos, Branding y Desarrollo Web Profesional en Nicaragua</h1>
-<p class="fade">Diseño estratégico para negocios que quieren destacar de verdad</p>
-<a href="https://wa.me/50581294177" class="btn fade">Cotizar ahora</a>
-<div class="sub-hero fade">Sin pago inicial • Diseño profesional • Resultados reales</div>
+  <div class="hero-inner">
+    <div class="hero-badge fade-up">Estudio creativo con base en Nicaragua</div>
+    <h1 class="fade-up delay-1">
+      Tu marca merece verse<br><span class="gradient-text">completamente profesional</span>
+    </h1>
+    <p class="hero-sub fade-up delay-2">
+      Creamos logotipos, branding e identidad visual en 48 horas, sin pago inicial. 3 propuestas únicas incluidas, pagas solo si quedas satisfecho.
+    </p>
+    <div class="hero-ctas fade-up delay-3">
+      <a href="https://wa.me/50581294177" class="btn-primary" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Cotizar por WhatsApp
+      </a>
+      <a href="#catalogo" class="btn-secondary">Ver portafolio →</a>
+    </div>
+    <div class="hero-stats fade-up delay-4">
+      <div class="stat-item">
+        <span class="stat-num">50+</span>
+        <span class="stat-label">Clientes satisfechos</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">3</span>
+        <span class="stat-label">Países atendidos</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">48h</span>
+        <span class="stat-label">Tiempo de entrega</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">100%</span>
+        <span class="stat-label">Satisfacción garantizada</span>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-indicator" aria-hidden="true">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
 </section>
 
-<section>
-<div class="alert fade">⚠️ Los precios varían según país por comisiones e impuestos</div>
-</section>
+<!-- NOTICE BANNER -->
+<div class="notice-banner">
+  <span class="notice-icon">⚠️</span>
+  <span>Los precios varían según el país de origen debido a comisiones e impuestos internacionales.</span>
+</div>
 
+<!-- SERVICIOS -->
 <section id="servicios">
-<h2 class="section-title fade">Servicios profesionales</h2>
-<div class="grid">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="section-label">Lo que hacemos</span>
+      <h2 class="section-title">Servicios profesionales<br>para tu negocio</h2>
+      <p class="section-desc">Diseño estratégico que convierte tu negocio en una marca que la gente recuerda y confía.</p>
+    </div>
+    <div class="services-grid">
 
-<div class="card fade"><span class="badge">Popular</span><img src="logo1.png"><h3>Logotipos</h3><p>Diseños únicos que representan tu marca</p><a href="https://wa.me/50581294177" class="btn">Cotizar</a></div>
+      <div class="service-card fade-up delay-1">
+        <div class="service-card-img">
+          <img src="logo1.png" alt="Diseño de logotipos profesionales en Nicaragua">
+          <div class="service-card-img-overlay"></div>
+          <span class="card-badge">⭐ Popular</span>
+        </div>
+        <div class="service-card-body">
+          <div class="service-icon">🎨</div>
+          <h3>Diseño de Logotipos</h3>
+          <p>Logos únicos y estratégicos que representan la esencia de tu marca. Incluye 3 propuestas, revisiones ilimitadas y entrega en todos los formatos.</p>
+          <div class="service-price">
+            <span class="price-from">Desde</span>
+            <span class="price-num">$15</span>
+            <span class="price-suffix">USD</span>
+          </div>
+          <a href="https://wa.me/50581294177?text=Hola%2C%20me%20interesa%20el%20servicio%20de%20Dise%C3%B1o%20de%20Logotipos" class="btn-card" target="_blank" rel="noopener">
+            Cotizar este servicio →
+          </a>
+        </div>
+      </div>
 
-<div class="card fade"><img src="logo2.png"><h3>Tarjeta de presentación</h3><p>Para publicitar tu negocio</p><a href="https://wa.me/50581294177" class="btn">Cotizar</a></div>
+      <div class="service-card fade-up delay-2">
+        <div class="service-card-img">
+          <img src="logo2.png" alt="Diseño de tarjetas de presentación profesionales">
+          <div class="service-card-img-overlay"></div>
+        </div>
+        <div class="service-card-body">
+          <div class="service-icon">💼</div>
+          <h3>Tarjetas de Presentación</h3>
+          <p>Diseños que causan impresión desde el primer contacto. La herramienta más poderosa para expandir tu red de clientes donde vayas.</p>
+          <div class="service-price">
+            <span class="price-from">Desde</span>
+            <span class="price-num">$10</span>
+            <span class="price-suffix">USD</span>
+          </div>
+          <a href="https://wa.me/50581294177?text=Hola%2C%20me%20interesa%20el%20servicio%20de%20Tarjetas%20de%20Presentaci%C3%B3n" class="btn-card" target="_blank" rel="noopener">
+            Cotizar este servicio →
+          </a>
+        </div>
+      </div>
 
-<div class="card fade"><img src="logo3.png"><h3>Vectorizado individual</h3><p>Ideal para imprimir en todo tipo de material</p><a href="https://wa.me/50581294177" class="btn">Cotizar</a></div>
+      <div class="service-card fade-up delay-3">
+        <div class="service-card-img">
+          <img src="logo3.png" alt="Vectorización de logotipos para impresión">
+          <div class="service-card-img-overlay"></div>
+        </div>
+        <div class="service-card-body">
+          <div class="service-icon">📐</div>
+          <h3>Vectorización de Logotipos</h3>
+          <p>Convierte tu logo en formato vectorial de alta calidad, ideal para impresión en cualquier material o tamaño sin pérdida de calidad.</p>
+          <div class="service-price">
+            <span class="price-from">Desde</span>
+            <span class="price-num">$8</span>
+            <span class="price-suffix">USD</span>
+          </div>
+          <a href="https://wa.me/50581294177?text=Hola%2C%20me%20interesa%20el%20servicio%20de%20Vectorizaci%C3%B3n" class="btn-card" target="_blank" rel="noopener">
+            Cotizar este servicio →
+          </a>
+        </div>
+      </div>
 
-<div class="card fade"><img src="logo4.png"><h3>Animación de logotipo</h3><p>Mas inclinado a empresas corporativas o iglesias.</p><a href="https://wa.me/50581294177" class="btn">Cotizar</a></div>
+      <div class="service-card fade-up delay-4">
+        <div class="service-card-img">
+          <img src="logo4.png" alt="Animación de logotipos para empresas">
+          <div class="service-card-img-overlay"></div>
+          <span class="card-badge">✨ Premium</span>
+        </div>
+        <div class="service-card-body">
+          <div class="service-icon">🎬</div>
+          <h3>Animación de Logotipo</h3>
+          <p>Dale vida a tu marca con una intro animada profesional. Ideal para empresas corporativas, iglesias, canales de YouTube y redes sociales.</p>
+          <div class="service-price">
+            <span class="price-from">Desde</span>
+            <span class="price-num">$25</span>
+            <span class="price-suffix">USD</span>
+          </div>
+          <a href="https://wa.me/50581294177?text=Hola%2C%20me%20interesa%20el%20servicio%20de%20Animaci%C3%B3n%20de%20Logotipo" class="btn-card" target="_blank" rel="noopener">
+            Cotizar este servicio →
+          </a>
+        </div>
+      </div>
 
-</div>
+    </div>
+  </div>
 </section>
 
+<!-- PROCESO -->
 <section id="metodo">
-<h2 class="section-title fade">Cómo trabajamos</h2>
-<div class="steps">
-<div class="step fade">1. Cuéntanos tu negocio y visión</div>
-<div class="step fade">2. Diseñamos sin pago inicial</div>
-<div class="step fade">3. Recibes  distintas propuestas de logotipo</div>
-<div class="step fade">4. Si deseas algun ajuste, lo hacemos</div>
-<div class="step fade">5. Una vez elegido el logotipo se procede con el pago de servicio</div>
-<div class="step fade">6. Entrega final completa sin marca de agua y en todos los formatos</div>
-</div>
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="section-label">Cómo trabajamos</span>
+      <h2 class="section-title">Un proceso simple,<br>resultados extraordinarios</h2>
+      <p class="section-desc">Trabajamos contigo paso a paso para garantizar que el resultado final sea exactamente lo que imaginaste.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step fade-up delay-1">
+        <div class="step-number">01</div>
+        <h3>Cuéntanos tu visión</h3>
+        <p>Nos escribes por WhatsApp, nos cuentas de tu negocio, tu industria y qué estilo te gusta. Cuanta más información, mejor resultado.</p>
+      </div>
+      <div class="process-step fade-up delay-2">
+        <div class="step-number">02</div>
+        <h3>Diseñamos sin pago inicial</h3>
+        <p>Comenzamos a trabajar de inmediato. No necesitas pagar nada por adelantado. Tu confianza nos basta para empezar.</p>
+      </div>
+      <div class="process-step fade-up delay-3">
+        <div class="step-number">03</div>
+        <h3>Recibes 3 propuestas únicas</h3>
+        <p>Te presentamos tres conceptos completamente distintos para que tengas opciones reales y puedas elegir la que más conecta con tu marca.</p>
+      </div>
+      <div class="process-step fade-up delay-4">
+        <div class="step-number">04</div>
+        <h3>Ajustamos hasta que quede perfecto</h3>
+        <p>¿Quieres cambiar un color, tipografía o elemento? Lo hacemos. Revisiones incluidas hasta que estés 100% satisfecho.</p>
+      </div>
+      <div class="process-step fade-up delay-5">
+        <div class="step-number">05</div>
+        <h3>Confirmas y realizas el pago</h3>
+        <p>Solo pagas una vez que el diseño sea exactamente lo que querías. Aceptamos métodos de pago locales e internacionales.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="step-number">06</div>
+        <h3>Entrega completa y definitiva</h3>
+        <p>Recibes todos los archivos: PNG transparente, JPG, PDF, SVG y AI. Sin marca de agua, listos para usar en cualquier medio.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section>
-<h2 class="section-title fade">Métodos de pago</h2>
-<div class="grid">
-<div class="card fade"><h3>Nicaragua</h3><p>Lafise</p><p>Banpro</p><p>Retiro sin tarjeta</p><p>BAC (No disponible temporalmente)</p></div>
-<div class="card fade"><h3>Internacional</h3><p>PayPal</p><p>Binance</p></div>
-</div>
+<!-- PRECIOS -->
+<section id="precios">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="section-label">Inversión</span>
+      <h2 class="section-title">Precios transparentes,<br>sin sorpresas</h2>
+      <p class="section-desc">Elige el paquete que se adapta a tu negocio. Todos incluyen revisiones y entrega en todos los formatos.</p>
+    </div>
+    <div class="pricing-grid">
+
+      <div class="pricing-card fade-up delay-1">
+        <div class="pricing-name">Básico</div>
+        <div class="pricing-desc">Para emprendedores que están comenzando su marca.</div>
+        <div class="pricing-amount">
+          <span class="pricing-currency">$</span><span class="pricing-value">15</span>
+          <div class="pricing-note">Precio para Nicaragua · Varía por país</div>
+        </div>
+        <ul class="pricing-features">
+          <li>Diseño de logotipo</li>
+          <li>3 propuestas únicas</li>
+          <li>2 rondas de revisiones</li>
+          <li>Archivos PNG y JPG</li>
+          <li>Entrega en 48 horas</li>
+        </ul>
+        <a href="https://wa.me/50581294177?text=Hola%2C%20me%20interesa%20el%20paquete%20B%C3%A1sico" class="btn-pricing-secondary" target="_blank" rel="noopener">Cotizar paquete básico</a>
+      </div>
+
+      <div class="pricing-card featured fade-up delay-2">
+        <div class="pricing-name">Profesional</div>
+        <div class="pricing-desc">Para negocios que quieren una identidad visual completa y sólida.</div>
+        <div class="pricing-amount">
+          <span class="pricing-currency">$</span><span class="pricing-value">35</span>
+          <div class="pricing-note">Precio para Nicaragua · Varía por país</div>
+        </div>
+        <ul class="pricing-features">
+          <li>Diseño de logotipo premium</li>
+          <li>3 propuestas únicas</li>
+          <li>Revisiones ilimitadas</li>
+          <li>Todos los formatos (PNG, JPG, PDF, SVG, AI)</li>
+          <li>Tarjeta de presentación incluida</li>
+          <li>Versión horizontal y vertical del logo</li>
+          <li>Entrega en 48–72 horas</li>
+        </ul>
+        <a href="https://wa.me/50581294177?text=Hola%2C%20me%20interesa%20el%20paquete%20Profesional" class="btn-pricing-primary" target="_blank" rel="noopener">Cotizar paquete profesional</a>
+      </div>
+
+      <div class="pricing-card fade-up delay-3">
+        <div class="pricing-name">Corporativo</div>
+        <div class="pricing-desc">Para empresas que necesitan una identidad completa con animación.</div>
+        <div class="pricing-amount">
+          <span class="pricing-currency">$</span><span class="pricing-value">60</span>
+          <div class="pricing-note">Precio para Nicaragua · Varía por país</div>
+        </div>
+        <ul class="pricing-features">
+          <li>Todo lo del paquete Profesional</li>
+          <li>Animación de logotipo</li>
+          <li>Manual de marca básico</li>
+          <li>Paleta de colores oficial</li>
+          <li>Tipografías de marca</li>
+          <li>Soporte post-entrega</li>
+        </ul>
+        <a href="https://wa.me/50581294177?text=Hola%2C%20me%20interesa%20el%20paquete%20Corporativo" class="btn-pricing-secondary" target="_blank" rel="noopener">Cotizar paquete corporativo</a>
+      </div>
+
+    </div>
+    <p class="pricing-disclaimer fade-up">
+      <span>💡</span> ¿No estás seguro qué paquete necesitas? Escríbenos y te ayudamos a elegir el ideal para tu caso.
+    </p>
+  </div>
 </section>
 
+<!-- PORTAFOLIO -->
 <section id="catalogo">
-<h2 class="section-title fade">Portafolio</h2>
-<div class="grid">
-<div class="card fade"><img src="trabajo1.jpg"></div>
-<div class="card fade"><img src="trabajo2.jpg"></div>
-<div class="card fade"><img src="trabajo3.jpg"></div>
-<div class="card fade"><img src="trabajo4.jpg"></div>
-<div class="card fade"><img src="trabajo5.jpg"></div>
-<div class="card fade"><img src="trabajo6.jpg"></div>
-</div>
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="section-label">Nuestro trabajo</span>
+      <h2 class="section-title">Portafolio de<br>proyectos reales</h2>
+      <p class="section-desc">Cada proyecto es único. Aquí algunos de los trabajos que hemos realizado para clientes reales.</p>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-item fade-up delay-1" onclick="openLightbox('trabajo1.jpg')">
+        <img src="trabajo1.jpg" alt="Diseño de logotipo - proyecto 1" loading="lazy">
+        <div class="portfolio-overlay">
+          <div>
+            <div class="portfolio-overlay-label">Identidad Visual</div>
+            <div class="portfolio-overlay-sub">Logotipo corporativo</div>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-item fade-up delay-2" onclick="openLightbox('trabajo2.jpg')">
+        <img src="trabajo2.jpg" alt="Diseño de logotipo - proyecto 2" loading="lazy">
+        <div class="portfolio-overlay">
+          <div>
+            <div class="portfolio-overlay-label">Branding</div>
+            <div class="portfolio-overlay-sub">Marca comercial</div>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-item fade-up delay-3" onclick="openLightbox('trabajo3.jpg')">
+        <img src="trabajo3.jpg" alt="Diseño de logotipo - proyecto 3" loading="lazy">
+        <div class="portfolio-overlay">
+          <div>
+            <div class="portfolio-overlay-label">Logotipo</div>
+            <div class="portfolio-overlay-sub">Empresa de servicios</div>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-item fade-up delay-4" onclick="openLightbox('trabajo4.jpg')">
+        <img src="trabajo4.jpg" alt="Diseño de logotipo - proyecto 4" loading="lazy">
+        <div class="portfolio-overlay">
+          <div>
+            <div class="portfolio-overlay-label">Identidad</div>
+            <div class="portfolio-overlay-sub">Negocio local</div>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-item fade-up delay-5" onclick="openLightbox('trabajo5.jpg')">
+        <img src="trabajo5.jpg" alt="Diseño de logotipo - proyecto 5" loading="lazy">
+        <div class="portfolio-overlay">
+          <div>
+            <div class="portfolio-overlay-label">Branding</div>
+            <div class="portfolio-overlay-sub">Marca personal</div>
+          </div>
+        </div>
+      </div>
+      <div class="portfolio-item fade-up" onclick="openLightbox('trabajo6.jpg')">
+        <img src="trabajo6.jpg" alt="Diseño de logotipo - proyecto 6" loading="lazy">
+        <div class="portfolio-overlay">
+          <div>
+            <div class="portfolio-overlay-label">Logotipo</div>
+            <div class="portfolio-overlay-sub">Organización institucional</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" aria-label="Cerrar">✕</button>
+  <img id="lightbox-img" src="" alt="Vista ampliada del trabajo">
+</div>
+
+<!-- OPINIONES -->
 <section id="opiniones">
-<h2 class="section-title fade">Opiniones de nuestros clientes</h2>
-<div class="grid">
-<div class="card fade">No sabiamos como hacer que nos tomaran enserio a la hora de dar crédito a nuestros clientes, es sorprendente como con un solo logo te subes de nivel, los recomiendo. - Soluciones MS de Nicaragua</div>
-<div class="card fade">Con las tarjetas de presentación que ustedes me crearon pude llegar a mas gente, simplemente entregandolas a donde sea que fuese a trabajar. - Servicios Generales Leo de Panamá</div>
-<div class="card fade">A pesar de que somos del ministerio de salud, creamos nuestro propio logotipo para nuestro equipo de softball, les quedó muy bonito - MINSA RACCS 2010 SOFTBALL de Nicaragua</div>
-</div>
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="section-label">Testimonios</span>
+      <h2 class="section-title">Lo que dicen<br>nuestros clientes</h2>
+      <p class="section-desc">Clientes reales, resultados reales. Su éxito es nuestro mayor logro.</p>
+    </div>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card fade-up delay-1">
+        <div class="stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="testimonial-text">No sabíamos cómo hacer que nos tomaran en serio a la hora de dar crédito a nuestros clientes. Es sorprendente cómo con un solo logotipo te subes de nivel. Los recomiendo completamente.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">S</div>
+          <div>
+            <div class="author-name">Soluciones MS</div>
+            <div class="author-company">Nicaragua · Servicios financieros</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card fade-up delay-2">
+        <div class="stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="testimonial-text">Con las tarjetas de presentación que me crearon pude llegar a más personas, simplemente entregándolas a donde fuese a trabajar. Mi cartera de clientes creció notablemente.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">L</div>
+          <div>
+            <div class="author-name">Servicios Generales Leo</div>
+            <div class="author-company">Panamá · Servicios generales</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card fade-up delay-3">
+        <div class="stars">
+          <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+        </div>
+        <p class="testimonial-text">Creamos nuestro propio logotipo para el equipo de softball del ministerio. Les quedó muy bonito y profesional. Todo el equipo quedó encantado con el resultado.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">M</div>
+          <div>
+            <div class="author-name">MINSA RACCS Softball</div>
+            <div class="author-company">Nicaragua · Institucional</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
 
-<section>
-<div class="card fade" style="text-align:center">
-<h2>¿Listo para transformar tu negocio?</h2>
-<p>Haz que tu marca se vea profesional desde hoy</p>
-<a href="https://wa.me/50581294177" class="btn">Cotizar ahora</a>
-</div>
+<!-- MÉTODOS DE PAGO -->
+<section id="pagos">
+  <div class="container">
+    <div class="section-head fade-up">
+      <span class="section-label">Facilidades de pago</span>
+      <h2 class="section-title">Pagamos de la forma<br>que más te convenga</h2>
+      <p class="section-desc">Aceptamos métodos de pago locales e internacionales para que no haya excusas para empezar tu proyecto.</p>
+    </div>
+    <div class="payments-grid">
+      <div class="payment-card fade-up delay-1">
+        <div class="payment-card-icon">🇳🇮</div>
+        <h3>Nicaragua</h3>
+        <ul class="payment-methods">
+          <li>Lafise</li>
+          <li>Banpro</li>
+          <li>Retiro sin tarjeta</li>
+          <li class="unavailable">BAC <span class="payment-tag">No disponible</span></li>
+        </ul>
+      </div>
+      <div class="payment-card fade-up delay-2">
+        <div class="payment-card-icon">🌎</div>
+        <h3>Internacional</h3>
+        <ul class="payment-methods">
+          <li>PayPal</li>
+          <li>Binance (Crypto)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
 
-<footer class="footer">
-<h3>Techworld Studio</h3>
-<p>Diseño profesional para negocios modernos</p>
-<p>WhatsApp: +505 8129 4177</p>
-<p>© 2026 Todos los derechos reservados</p>
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-head fade-up" style="text-align:center; max-width:600px; margin:0 auto 60px;">
+      <span class="section-label">Preguntas frecuentes</span>
+      <h2 class="section-title">Todo lo que necesitas saber antes de cotizar</h2>
+    </div>
+    <div class="faq-list fade-up">
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          ¿Realmente no hay pago inicial?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Así es. Empezamos a diseñar sin que tengas que pagar nada por adelantado. Solo realizas el pago una vez que hayas visto las propuestas y estés completamente satisfecho con el resultado elegido.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          ¿Cuánto tiempo tarda la entrega?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Las primeras 3 propuestas las recibes en un máximo de 48 horas desde que nos das la información. Si necesitas ajustes, los realizamos en un plazo de 24 horas adicionales por ronda de cambios.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          ¿Cuántas revisiones o cambios incluye el servicio?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Depende del paquete. El básico incluye 2 rondas de revisiones. El paquete Profesional y Corporativo incluyen revisiones ilimitadas hasta que quedes 100% conforme. No nos vamos hasta que quedes feliz con el resultado.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          ¿En qué formatos entrego los archivos finales?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Entregas en todos los formatos que necesitas: PNG con fondo transparente, JPG, PDF vectorial, SVG y el archivo editable AI (Adobe Illustrator). Listos para impresión, redes sociales, web o cualquier medio.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          ¿Atienden clientes fuera de Nicaragua?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Sí, atendemos clientes en toda Latinoamérica y el mundo. Hemos trabajado con clientes en Panamá y otros países. Los pagos internacionales se realizan por PayPal o Binance.</div>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          ¿El logo diseñado me pertenece completamente?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Sí. Una vez realizado el pago, todos los derechos del diseño te pertenecen a ti al 100%. Puedes usarlo, modificarlo y registrarlo como marca sin ningún problema.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="cta">
+  <div class="container">
+    <div class="cta-box fade-up">
+      <h2>¿Listo para transformar<br>tu negocio en una marca real?</h2>
+      <p>Más de 50 negocios ya confían en TechWorld Studio. Tú serás el siguiente éxito.</p>
+      <div class="cta-btns">
+        <a href="https://wa.me/50581294177?text=Hola%2C%20quiero%20cotizar%20un%20dise%C3%B1o%20de%20logotipo" class="btn-primary" target="_blank" rel="noopener">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Cotizar por WhatsApp
+        </a>
+        <a href="#servicios" class="btn-secondary">Ver todos los servicios</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="logo-brand">TechWorld Studio</span>
+        <p>Estudio de diseño gráfico y branding con base en Nicaragua. Creamos marcas que venden, impactan y crecen.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="#servicios">Diseño de Logotipos</a></li>
+          <li><a href="#servicios">Tarjetas de Presentación</a></li>
+          <li><a href="#servicios">Vectorización</a></li>
+          <li><a href="#servicios">Animación de Logos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="https://wa.me/50581294177" target="_blank" rel="noopener">WhatsApp: +505 8129 4177</a></li>
+          <li><a href="#faq">Preguntas Frecuentes</a></li>
+          <li><a href="#catalogo">Portafolio</a></li>
+          <li><a href="#opiniones">Testimonios</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 TechWorld Studio. Todos los derechos reservados.</p>
+      <p>Hecho con ❤️ en Nicaragua</p>
+    </div>
+  </div>
 </footer>
 
+<!-- WhatsApp flotante -->
+<a href="https://wa.me/50581294177?text=Hola%2C%20me%20interesa%20cotizar%20un%20dise%C3%B1o" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+  <div class="wa-tooltip">¡Escríbenos ahora! 💬</div>
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
 <script>
-const faders=document.querySelectorAll('.fade');
-const obs=new IntersectionObserver(entries=>{
-entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show')}})
+// =============================================
+// HAMBURGER MENU
+// =============================================
+const hamburger = document.getElementById('hamburger');
+const mobileMenu = document.getElementById('mobileMenu');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
 });
-faders.forEach(el=>obs.observe(el));
 
-document.getElementById('toggle').onclick=()=>document.body.classList.toggle('dark');
+// Close mobile menu when a link is clicked
+mobileMenu.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  });
+});
+
+// =============================================
+// SCROLL ANIMATIONS
+// =============================================
+const fadeEls = document.querySelectorAll('.fade-up');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+fadeEls.forEach(el => observer.observe(el));
+
+// Hero elements animate on load
+window.addEventListener('load', () => {
+  document.querySelectorAll('.hero .fade-up').forEach((el, i) => {
+    setTimeout(() => el.classList.add('visible'), 150 + i * 120);
+  });
+});
+
+// =============================================
+// FAQ ACCORDION
+// =============================================
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// =============================================
+// LIGHTBOX
+// =============================================
+function openLightbox(src) {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightbox-img');
+  img.src = src;
+  lb.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeLightbox();
+});
+
+// =============================================
+// SMOOTH SCROLL FOR ANCHOR LINKS
+// =============================================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// =============================================
+// ACTIVE NAV ON SCROLL
+// =============================================
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(sec => {
+    if (window.scrollY >= sec.offsetTop - 120) current = sec.id;
+  });
+  navLinks.forEach(link => {
+    link.style.color = '';
+    if (link.getAttribute('href') === '#' + current) {
+      link.style.color = '#f1f5f9';
+    }
+  });
+}, { passive: true });
 </script>
-
 </body>
 </html>
